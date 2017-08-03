@@ -1,0 +1,21 @@
+<div class="container">
+  <h1 class="text-center">Dose</h1>
+  <p>
+    <table class="table">
+      <!-- table header -->
+      <tr>
+        <th>ID</th>
+        <th>Cocktail</th>
+        <th>Description</th>
+        <th>Ingredient</th>
+      </tr>
+        <!-- table body -->
+      <tr>
+        <td><%= @dose.id %> -</td>
+        <td><%= @dose.cocktail.name %></td>
+        <td><%= @dose.description %></td>
+        <td><%= @dose.ingredient.name %></td>
+      </tr>
+    </table>
+  </p>
+</div>

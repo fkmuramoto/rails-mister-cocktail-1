@@ -1,20 +1,31 @@
-<div class="container">
-  <h1 class="text-center">Cocktail</h1>
-  <p>
-    <table class="table">
-      <!-- table header -->
-      <tr>
-        <th>ID</th>
-        <th>Name</th>
-      </tr>
-        <!-- table body -->
-      <tr>
-        <td><%= @cocktail.id %> -</td>
-        <td><%= @cocktail.name %></td>
-      </tr>
-    </table>
-  </p>
+<div class="container text-center">
+  <h5>Cocktail</h5>
+  <h2><%= @cocktail.name %></h2>
+</div>
 
+<div class="container" id="doses">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Ingredient</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @cocktail.doses.each do |dose| %>
+        <tr>
+          <td><%= dose.description %></td>
+          <td><%= dose.ingredient.name %></td>
+          <td><%= link_to("delete", dose_path(dose)) %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+  <p class="text-center"><%= link_to("Add new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-default") %></p>
+</div>
+
+<div class="text-center">
   <%= link_to("< Back to cocktails |", cocktails_path) %>
   <%= link_to("| Edit cocktail details >", edit_cocktail_path) %>
 </div>
