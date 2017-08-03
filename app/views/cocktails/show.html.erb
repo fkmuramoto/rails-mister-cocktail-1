@@ -1,0 +1,20 @@
+<div class="container">
+  <h1 class="text-center">Cocktail</h1>
+  <p>
+    <table class="table">
+      <!-- table header -->
+      <tr>
+        <th>ID</th>
+        <th>Name</th>
+      </tr>
+        <!-- table body -->
+      <tr>
+        <td><%= @cocktail.id %> -</td>
+        <td><%= @cocktail.name %></td>
+      </tr>
+    </table>
+  </p>
+
+  <%= link_to("< Back to cocktails |", cocktails_path) %>
+  <%= link_to("| Edit cocktail details >", edit_cocktail_path) %>
+</div>
