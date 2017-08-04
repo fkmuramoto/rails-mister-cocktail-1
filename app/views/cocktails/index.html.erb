@@ -4,6 +4,25 @@
   <p class="text-center">All cocktails in our server!</p>
   <h3 class="text-center"><%= link_to("Add new cocktail" ,new_cocktail_path, class: "btn btn-primary") %></h3>
 
+
+
+
+  <% @cocktails.each do |cocktail| %>
+    <div class="product">
+      <%= cl_image_tag cocktail.photo, height: 50, width: 50, crop: :thumb, class: "product-image hidden-xs" %>
+      <div class='product-body'>
+        <h3><%= cocktail.name %></h3>
+        <p>Best job offers on your phone</p>
+      </div>
+      <ul class="list-inline product-controls hidden-sm hidden-xs">
+        <li><%= link_to cocktail_path(cocktail) do %>
+          <i class="fa fa-eye"></i> view
+          <% end %></li>
+      </ul>
+    </div>
+<% end %>
+
+
   <table class="table table-striped">
     <thead>
       <tr>
@@ -24,3 +43,15 @@
     </tbody>
   </table>
 </div>
+
+<!-- Large modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
+
+<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content">
+      ...
+    </div>
+  </div>
+</div>
+
