@@ -5,23 +5,54 @@
   <h3 class="text-center"><%= link_to("Add new cocktail" ,new_cocktail_path, class: "btn btn-primary") %></h3>
 
 
+<div class="pull-top pull-right">
+  <form action="/cocktails" method="get" id="cocktails-order">
+    <%= select(nil, "order_by_name", [["Date added", nil], ["Alphabetical", true]], { selected: params[:order_by_name] }) %>
+  </form>
+</div>
+</div>
 
+<div class="container">
 
   <% @cocktails.each do |cocktail| %>
     <div class="product">
-      <%= cl_image_tag cocktail.photo, height: 50, width: 50, crop: :thumb, class: "product-image hidden-xs" %>
+      <%= cl_image_tag cocktail.photo, height: 75, width: 75, crop: :thumb, class: "product-image hidden-xs" %>
       <div class='product-body'>
         <h3><%= cocktail.name %></h3>
-        <p>Best job offers on your phone</p>
+        <p>Description to come</p>
       </div>
       <ul class="list-inline product-controls hidden-sm hidden-xs">
-        <li><%= link_to cocktail_path(cocktail) do %>
+        <li><%#= link_to cocktail_path(cocktail) do %><a href="" data-toggle="modal" data-target="#cocktail_<%= cocktail.id.to_s %>">
           <i class="fa fa-eye"></i> view
+          <%# end %></li></a>
+
+          <li><%= link_to cocktail_path(cocktail) do %>
+          <i class="fa fa-pencil"></i> edit
           <% end %></li>
+
+
       </ul>
     </div>
+
+
+    <div class="modal fade" id="cocktail_<%= cocktail.id.to_s %>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+          Quick view
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          </div>
+          <div class="modal-body">
+            <%= render "modal", cocktail: cocktail %>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
 <% end %>
 
+<!--
 
   <table class="table table-striped">
     <thead>
@@ -42,16 +73,9 @@
       <% end %>
     </tbody>
   </table>
-</div>
+</div> -->
 
-<!-- Large modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bs-example-modal-lg">Large modal</button>
 
-<div class="modal fade bs-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel">
-  <div class="modal-dialog modal-lg" role="document">
-    <div class="modal-content">
-      ...
-    </div>
-  </div>
-</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 

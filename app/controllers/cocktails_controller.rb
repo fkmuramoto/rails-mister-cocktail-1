@@ -2,7 +2,11 @@ class CocktailsController < ApplicationController
 
   # before_action :find_cocktail, only: [:show, :view]
   def index
-    @cocktails = Cocktail.all
+    if params[:order_by_name].present?
+      @cocktails = Cocktail.order(name: :asc)
+    else
+      @cocktails = Cocktail.all
+    end
   end
 
   def show

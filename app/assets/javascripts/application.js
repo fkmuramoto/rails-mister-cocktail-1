@@ -12,7 +12,11 @@
 //
 //= require rails-ujs
 //= require turbolinks
-//= require bootstrap-sprockets
 //= require jquery
 //= require jquery_ujs
+//= require bootstrap-sprockets
 //= require_tree .
+
+$(function() {
+  $("#cocktails-order").change(function() { $(this).submit() });
+})

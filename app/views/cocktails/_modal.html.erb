@@ -1,0 +1,27 @@
+<div class="text-center">
+  <p><%= cl_image_tag cocktail.photo, height: 100, width: 100, crop: :thumb, class: "product-image hidden-m" %></p>
+  <h2><%= cocktail.name %></h2>
+</div>
+
+<div class="" id="doses">
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Description</th>
+        <th>Ingredient</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% cocktail.doses.each do |dose| %>
+        <tr>
+          <td><%= dose.description %></td>
+          <td><%= dose.ingredient.name %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
+</div>
+
+
+
+

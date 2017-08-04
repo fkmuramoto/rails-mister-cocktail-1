@@ -21,14 +21,14 @@ ingredients_hash["drinks"].first(100).each do |ingredient_hash|
 end
 ingredients = Ingredient.all
 
-10.times do |i|
-  cocktail = Cocktail.create(name: Faker::Beer.name)
+# 10.times do |i|
+#   cocktail = Cocktail.create(name: Faker::Beer.name)
 
-  10.times do |j|
-    dose = Dose.new()
-    dose.cocktail = cocktail
-    dose.ingredient = ingredients[(10*i) + j]
-    dose.description = "#{rand(250)+20}ml"
-    dose.save!
-  end
-end
+#   10.times do |j|
+#     dose = Dose.new()
+#     dose.cocktail = cocktail
+#     dose.ingredient = ingredients[(10*i) + j]
+#     dose.description = "#{rand(250)+20}ml"
+#     dose.save!
+#   end
+# end

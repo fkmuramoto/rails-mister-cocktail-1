@@ -1,3 +1,8 @@
+body {
+  padding: 50px;
+  padding-top: 70px;
+}
+
 h2 {
   margin-top: 0;
   margin-bottom: 50px;
@@ -32,7 +37,7 @@ h5 {
 
 /* Product image */
 .product-image {
-  border-radius: 10px;
+  border-radius: 25%;
   margin-right: 20px;
   // width: 175px;
 }
@@ -104,3 +109,12 @@ h5 {
 .product-upvote:hover .product-arrow {
   border-bottom: 9px solid #5898f1;
 }
+
+#sign-up-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      margin-left: -40px;
+      margin-top: -20px;
+    }
+
