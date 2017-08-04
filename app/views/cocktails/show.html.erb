@@ -16,16 +16,18 @@
         <tr>
           <td><%= dose.description %></td>
           <td><%= dose.ingredient.name %></td>
-          <td><%= link_to("delete", dose_path(dose)) %></td>
+          <td><%= link_to("delete", dose_path(dose), method: :delete) %></td>
         </tr>
       <% end %>
     </tbody>
   </table>
 
-  <p class="text-center"><%= link_to("Add new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-default") %></p>
+  <div class="text-center">
+    <%= link_to("Back to cocktails", cocktails_path, class: "btn btn-default") %>
+    <%= link_to("Add new dose", new_cocktail_dose_path(@cocktail), class: "btn btn-default") %>
+  </div>
 </div>
 
-<div class="text-center">
-  <%= link_to("< Back to cocktails |", cocktails_path) %>
-  <%= link_to("| Edit cocktail details >", edit_cocktail_path) %>
-</div>
+
+
+
