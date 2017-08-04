@@ -27,6 +27,9 @@ gem 'simple_form'
 gem 'autoprefixer-rails'
 gem 'jquery-rails' # IMPORTANT!!
 
+# Figaro
+gem 'figaro'
+
 # Faker
 gem 'faker'
 # Use CoffeeScript for .coffee assets and views
