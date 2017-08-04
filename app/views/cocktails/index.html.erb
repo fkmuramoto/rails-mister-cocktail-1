@@ -16,6 +16,7 @@
       <% @cocktails.each do |cocktail| %>
         <tr>
           <td><p><%= cocktail.id %></p></td>
+          <td><p><%= cl_image_tag cocktail.photo, height: 50, width: 50, crop: :thumb %></p></td>
           <td><p><%= cocktail.name %></p></td>
           <td><p><%= link_to( "view", cocktail_path(cocktail)) %></p></td>
         </tr>
